@@ -1,0 +1,9 @@
+﻿unicorn = <a href="https://www.freepik.com/free-vector/cute-hand-drawn-unicorns-in-different-situations_867358.htm">Designed by Freepik</a>
+garbagebin = <a href="https://www.freepik.com/free-vector/recycling-icons-collection_1030650.htm">Designed by Freepik</a>
+business-icons = <a href='https://www.freepik.com/free-vector/business-icons-design_1096018.htm'>Designed by Freepik</a>
+
+
+credit arrow = <a href='https://www.freepik.com/free-vector/infographic-arrows-pack_2047543.htm'>Designed by Freepik</a>
+
+webIcon = <a href='https://www.freepik.com/free-vector/useful-web-icons-collection_573292.htm'>Designed by Freepik</a>
+
