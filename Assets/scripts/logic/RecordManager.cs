@@ -15,6 +15,26 @@ public static class RecordManager {
     public static Record getById(int id){
         return RecordsManager.GetHistory().records.Find((obj) => obj.id == id);
     }
+
+    internal static Record getLongestSleepRecord()
+    {
+        Record longestSleep = null;
+        Records records = RecordsManager.GetHistory();
+        foreach (Record record in records.records)
+        {
+            if (longestSleep == null){
+                longestSleep = record;
+            }
+            else if(getTimeSpan(record) > getTimeSpan(longestSleep)){
+                longestSleep = record;
+            }
+        }
+        return longestSleep;
+    }
+
+    private static TimeSpan getTimeSpan(Record record){
+        return record.getEndDateTime().Subtract(record.getStartDateTime());
+    }
     public static void update(Record timeRecord) {
         Records history = RecordsManager.GetHistory();
         List<Record> records = history.records.ConvertAll((Record input) =>
