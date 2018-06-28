@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 222582396872799206}
   - component: {fileID: 114328357841870040}
   - component: {fileID: 114959668125670062}
-  - component: {fileID: 114472226648180904}
+  - component: {fileID: 114868977766177094}
   m_Layer: 5
   m_Name: RecordDisplay
   m_TagString: Untagged
@@ -225,22 +225,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114472226648180904
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1068608972098234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9668f16d6e34d407e9f075bd674eb4d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeRecord:
-    id: 0
-    startMil: 
-    endMil: 
-    hint: 
 --- !u!114 &114597092298566032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -342,6 +326,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: '-'
+--- !u!114 &114868977766177094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1068608972098234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7453f365ca52844ab88eb188c20290ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114959668125670062
 MonoBehaviour:
   m_ObjectHideFlags: 1

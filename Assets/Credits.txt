@@ -6,4 +6,4 @@ business-icons = <a href='https://www.freepik.com/free-vector/business-icons-des
 credit arrow = <a href='https://www.freepik.com/free-vector/infographic-arrows-pack_2047543.htm'>Designed by Freepik</a>
 
 webIcon = <a href='https://www.freepik.com/free-vector/useful-web-icons-collection_573292.htm'>Designed by Freepik</a>
-
+statistics = <a href='https://www.freepik.com/free-vector/statistics-chart-set_762105.htm'>Designed by Freepik</a>

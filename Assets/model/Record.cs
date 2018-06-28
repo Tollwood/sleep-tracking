@@ -68,4 +68,8 @@ public class Record : IComparable<Record>{
     {
         return id == 0;
     }
+
+    public bool isTracking(){
+        return !(startMil == null || startMil == "");
+    }
 }

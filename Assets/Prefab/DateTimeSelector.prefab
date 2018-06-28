@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224992344697696358}
-  - component: {fileID: 114294561575756608}
+  - component: {fileID: 114405366440197378}
   m_Layer: 5
   m_Name: DateTimeSelector
   m_TagString: Untagged
@@ -539,7 +539,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114294561575756608}
+      - m_Target: {fileID: 0}
         m_MethodName: onMinutesUp
         m_Mode: 1
         m_Arguments:
@@ -618,17 +618,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &114294561575756608
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1840982404790198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0aadcac8ccb1472a8e4abc024b1b1ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114296150618902822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -668,7 +657,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114294561575756608}
+      - m_Target: {fileID: 0}
         m_MethodName: onMonthDown
         m_Mode: 1
         m_Arguments:
@@ -957,7 +946,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114294561575756608}
+      - m_Target: {fileID: 0}
         m_MethodName: onMonthUp
         m_Mode: 1
         m_Arguments:
@@ -970,6 +959,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114405366440197378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1840982404790198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8e554778cb740c8835afa1df8ddc85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114420460302301856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114294561575756608}
+      - m_Target: {fileID: 0}
         m_MethodName: onMinutesDown
         m_Mode: 1
         m_Arguments:
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114294561575756608}
+      - m_Target: {fileID: 0}
         m_MethodName: onHoursDown
         m_Mode: 1
         m_Arguments:
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114294561575756608}
+      - m_Target: {fileID: 0}
         m_MethodName: onHoursUp
         m_Mode: 1
         m_Arguments:
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114294561575756608}
+      - m_Target: {fileID: 0}
         m_MethodName: onDayDown
         m_Mode: 1
         m_Arguments:
@@ -1844,7 +1844,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114294561575756608}
+      - m_Target: {fileID: 0}
         m_MethodName: onYearUp
         m_Mode: 1
         m_Arguments:
@@ -1896,7 +1896,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114294561575756608}
+      - m_Target: {fileID: 114405366440197378}
         m_MethodName: onDayUp
         m_Mode: 1
         m_Arguments:
@@ -2035,7 +2035,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114294561575756608}
+      - m_Target: {fileID: 0}
         m_MethodName: onYearDown
         m_Mode: 1
         m_Arguments:
