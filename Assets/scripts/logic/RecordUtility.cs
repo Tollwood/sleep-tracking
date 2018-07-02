@@ -16,7 +16,7 @@ public class TimeRecordUtility {
     {
         DateTime endTime = (timeRecord.endMil == null || timeRecord.endMil == "") ? DateTime.Now : timeRecord.getEndDateTime();
         TimeSpan duration = (endTime - timeRecord.getStartDateTime());
-        return String.Format("{0}h {1}min", duration.Hours.ToString().PadLeft(2, '0'), duration.Minutes.ToString().PadLeft(2,'0'));
+        return String.Format("{0}h {1}min {2}sec", duration.Hours.ToString().PadLeft(2, '0'), duration.Minutes.ToString().PadLeft(2,'0'), duration.Seconds.ToString().PadLeft(2, '0'));
     }
 
     internal static string DateTimeToString(DateTime dateTime){

@@ -25,7 +25,7 @@ public class DateTimeSelectorController : MonoBehaviour
     {
         dayUpButton = transform.Find("UpDay").GetComponent<Button>();
         dayInput = transform.Find("DayInput").GetComponent<InputField>();
-        dayDownButton = transform.Find("DownDay").GetComponent<Button>();
+        dayDownButton = transform.Find("UpDay").GetComponent<Button>();
         monthUpButton = transform.Find("MonthUp").GetComponent<Button>();
         monthInput = transform.Find("MonthInput").GetComponent<InputField>();    
         monthDownButton = transform.Find("MonthDown").GetComponent<Button>();
