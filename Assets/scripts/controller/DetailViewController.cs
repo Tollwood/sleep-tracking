@@ -9,7 +9,23 @@ public class DetailViewController : MonoBehaviour {
     private DateTimeSelectorController startDateTimeSelector;
     private DateTimeSelectorController endDateTimeSelector;
 
-    public void setSelectedTimeRecord(Record tr){record = tr;}
+    public void setSelectedTimeRecord(Record tr){
+        if(tr == null){
+            return;
+        }
+        record = tr;
+
+        transform.Find("Title").GetComponent<Text>().text = "Bearbeiten";
+
+        if (record.isNewRecord())
+        {
+            transform.Find("Title").GetComponent<Text>().text = "Neuer Eintrag";
+        }
+
+        transform.Find("DeleteButton").GetComponent<Button>().gameObject.SetActive(!record.isNewRecord());
+        transform.Find("HintInput").GetComponent<InputField>().text = record.hint;
+        transform.Find("StartDateTimeSelector").GetComponent<DateTimeSelectorController>().SetDateTime(record.getStartDateTime());
+        transform.Find("EndDateTimeSelector").GetComponent<DateTimeSelectorController>().SetDateTime(record.getEndDateTime());}
 
     public Record GetTimeRecord(){return record;}
 
@@ -24,8 +40,8 @@ public class DetailViewController : MonoBehaviour {
     public void onSave()
     {
         record.hint = hintInput.text;
-        record.SetStartDate(startDateTimeSelector.dateTime);
-        record.SetEndDate(endDateTimeSelector.dateTime);
+        record.SetStartDate(startDateTimeSelector.GetDateTime());
+        record.SetEndDate(endDateTimeSelector.GetDateTime());
         if(record.id == 0){
             RecordsManager.save(record);
         }
@@ -40,19 +56,6 @@ public class DetailViewController : MonoBehaviour {
         hintInput = transform.Find("HintInput").GetComponent<InputField>();
         startDateTimeSelector = transform.Find("StartDateTimeSelector").GetComponent<DateTimeSelectorController>();
         endDateTimeSelector = transform.Find("EndDateTimeSelector").GetComponent<DateTimeSelectorController>();
-    }
-
-    private void OnEnable(){
-        title.text = "Bearbeiten";
-
-        if(record.isNewRecord()){
-            title.text = "Neuer Eintrag";
-        }
-
-        deletButton.gameObject.SetActive(!record.isNewRecord());
-        hintInput.text = record.hint;
-        startDateTimeSelector.dateTime = record.getStartDateTime();
-        endDateTimeSelector.dateTime = record.getEndDateTime();
     }
 
 }

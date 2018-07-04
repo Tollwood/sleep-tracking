@@ -19,13 +19,14 @@ public class DateTimeSelectorController : MonoBehaviour
     private Button minutesUpButton;
     private InputField minutesInput;
     private Button minutesDownButton;
-    public DateTime dateTime;
+    private DateTime dateTime;
+    private DateTime renderedDatTime;
 
     protected void Awake()
     {
-        dayUpButton = transform.Find("UpDay").GetComponent<Button>();
+        dayUpButton = transform.Find("DayUp").GetComponent<Button>();
         dayInput = transform.Find("DayInput").GetComponent<InputField>();
-        dayDownButton = transform.Find("UpDay").GetComponent<Button>();
+        dayDownButton = transform.Find("DayDown").GetComponent<Button>();
         monthUpButton = transform.Find("MonthUp").GetComponent<Button>();
         monthInput = transform.Find("MonthInput").GetComponent<InputField>();    
         monthDownButton = transform.Find("MonthDown").GetComponent<Button>();
@@ -43,7 +44,7 @@ public class DateTimeSelectorController : MonoBehaviour
     private void Start()
     {
         dayUpButton.onClick.AddListener(onDayUp);
-        dayDownButton.onClick.AddListener(onDayUp);
+        dayDownButton.onClick.AddListener(onDayDown);
         monthUpButton.onClick.AddListener(onMonthUp);
         monthDownButton.onClick.AddListener(onMonthDown);
         yearUpButton.onClick.AddListener(onYearUp);
@@ -53,11 +54,17 @@ public class DateTimeSelectorController : MonoBehaviour
         minutesUpButton.onClick.AddListener(onMinutesUp);
         minutesDownButton.onClick.AddListener(onMinutesDown);
     }
-    private void OnEnable()
-    {
-        renderDateTime();   
-    }
 
+    private void Update()
+    {
+        if(dateTime != renderedDatTime){
+            renderDateTime();
+            renderedDatTime = dateTime;
+        }
+    }
+    private void OnEnable(){
+        renderDateTime();
+    }
     public void onMinutesUp()
     {
         dateTime = dateTime.AddMinutes(1);
@@ -119,10 +126,19 @@ public class DateTimeSelectorController : MonoBehaviour
     }
 
     private void renderDateTime(){
-        dayInput.text = dateTime.Day.ToString();
-        monthInput.text = dateTime.Month.ToString();
-        yearInput.text = dateTime.Year.ToString();
-        hourInput.text = dateTime.Hour.ToString();
-        minutesInput.text = dateTime.Minute.ToString();
+        transform.Find("DayInput").GetComponent<InputField>().text = dateTime.Day.ToString();
+        transform.Find("MonthInput").GetComponent<InputField>().text = dateTime.Month.ToString();
+        transform.Find("YearInput").GetComponent<InputField>().text = dateTime.Year.ToString();
+        transform.Find("HourInput").GetComponent<InputField>().text = dateTime.Hour.ToString();
+        transform.Find("MinutesInput").GetComponent<InputField>().text = dateTime.Minute.ToString();
+    }
+
+    public void SetDateTime(DateTime newDateTime){
+        dateTime = newDateTime;
+        renderDateTime();
+    }
+
+    public DateTime GetDateTime(){
+        return dateTime;
     }
 }
