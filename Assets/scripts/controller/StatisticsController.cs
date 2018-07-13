@@ -7,7 +7,7 @@ public class StatisticsController : MonoBehaviour {
 
     private void Awake()
     {
-        longestSleep = transform.Find("LongestSleep").GetComponent<RecordDisplayController>();
+        longestSleep = transform.Find("longestSleep").GetComponent<RecordDisplayController>();
     }
 
     private void OnEnable()

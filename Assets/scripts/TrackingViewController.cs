@@ -13,7 +13,7 @@ public class TrackingViewController : MonoBehaviour {
     {
         awakeGroup = transform.Find("AwakeGroup");
         sleepGroup = transform.Find("SleepGroup");
-        statistics = transform.Find("Statistics");
+        statistics = transform.Find("StatisticsView");
         list = transform.Find("List");
     }
 

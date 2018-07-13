@@ -769,7 +769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 21.699951, y: 0.000030517578}
+  m_AnchoredPosition: {x: 21.699951, y: -0.000065211796}
   m_SizeDelta: {x: -40.6, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &513201128
@@ -4015,8 +4015,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1796385547}
+  - component: {fileID: 1796385548}
   m_Layer: 5
-  m_Name: Statistics
+  m_Name: StatisticsView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4043,6 +4044,17 @@ RectTransform:
   m_AnchoredPosition: {x: -1.6274917, y: -263.18997}
   m_SizeDelta: {x: 796.7, y: 896.52}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1796385548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1796385546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5267c1ba3a2d43e1aec4906752e48ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1941838942
 GameObject:
   m_ObjectHideFlags: 0
