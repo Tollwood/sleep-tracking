@@ -44,6 +44,7 @@ public static class RecordsManager {
             dayElement = new DayElement();
             dayElement.addRecord(record);
         }
+        dayElements.Add(dayElement);
         return dayElements;
     }
 
