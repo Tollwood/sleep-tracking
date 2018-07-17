@@ -37,16 +37,31 @@ public class DayElement {
             SleepElement newSleepElement = new SleepElement();
             newSleepElement.addRecord(record);
             sleepElements.Add(newSleepElement);
-            date = record.getStartDateTime();
+            date = setCurrentDate(record);
             return;
         }
         // just add it 
         sleepElements.ToArray()[0].addRecord(record);
     }
 
+    private DateTime setCurrentDate(Record record)
+    {
+        if(record.getStartDateTime().Hour > 18){
+            DateTime newDate = record.getStartDateTime().AddDays(1);
+            return newDate;
+        }
+        return record.getStartDateTime();
+    }
+
     internal bool isSameDay(Record record)
     {
-        if( date.Date.Equals(record.getStartDateTime().Date)){
+        if(date.Year == 1){
+            return true;
+        }
+        DateTime startDate = date.Date.AddHours(-6);
+        DateTime endDate = date.Date.AddHours(18);
+        //today 18 - to yesterday
+        if(  startDate < record.getStartDateTime() && endDate > record.getStartDateTime()){
             return true;
         }
 
