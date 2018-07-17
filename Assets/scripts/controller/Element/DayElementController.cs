@@ -6,9 +6,7 @@ using UnityEngine.EventSystems;
 public class DayElementController : MonoBehaviour, IPointerClickHandler
 {
     private DayElement dayElement;
-    private GameObject previousView;
-    private bool interactable;
-
+    private Action onClick = null;
     private Text sleepUnits;
     private Text date;
     private Text duration; 
@@ -22,21 +20,16 @@ public class DayElementController : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(!interactable){
-            return; 
-        }
-        Destroy(previousView);
-        ObjectFactory.createDayView(dayElement);
+        onClick();
     }
 
 
-    public void configure(DayElement dayElement, GameObject previousView, bool interactable){
+    public void configure(DayElement dayElement, Action onClickAction) {
         this.dayElement = dayElement;
-        this.sleepUnits.text = dayElement.GetSleepCount()+"";
+        this.sleepUnits.text = dayElement.GetSleepCount() + "";
         this.date.text = dayElement.GetDate();
+        this.onClick = onClickAction;
         this.duration.text = TimeRecordUtility.MiliSecToDuration(dayElement.GetTotalSleepTime());
-        this.previousView = previousView;
-        this.interactable = interactable;
     }
 
 }

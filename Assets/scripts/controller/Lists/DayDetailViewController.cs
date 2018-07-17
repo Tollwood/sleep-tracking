@@ -11,12 +11,12 @@ public class DayDetailViewController : AbstracListController<SleepElement>{
     }
     public void configure(DayElement dayElement){
         this.dayElement = dayElement;
-        dayElemetUi.GetComponent<DayElementController>().configure(dayElement, this.gameObject, false);
+        dayElemetUi.GetComponent<DayElementController>().configure(dayElement, () => { ObjectFactory.createDayList(); });
         elements = dayElement.GetSleepElements();
     }
 
     protected override void addElement(SleepElement element)
     {
-        ObjectFactory.createSleepElement(dayElement, element, this.gameObject, container);
+        ObjectFactory.createSleepElement(dayElement, element, container);
     }
 }

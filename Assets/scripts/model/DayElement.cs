@@ -40,8 +40,18 @@ public class DayElement {
             date = setCurrentDate(record);
             return;
         }
-        // just add it 
-        sleepElements.ToArray()[0].addRecord(record);
+        SleepElement[] sleeps = sleepElements.ToArray();
+        SleepElement lastElement = sleeps[sleeps.Length - 1];
+        Record[] records = lastElement.GetRecords().ToArray();
+        Record lastRecord = records[records.Length - 1];
+
+        if(lastRecord.getStartDateTime().AddHours(-2) < record.getEndDateTime()){
+            lastElement.addRecord(record);
+            return;
+        }
+        SleepElement element = new SleepElement();
+        element.addRecord(record);
+        sleepElements.Add(element);
     }
 
     private DateTime setCurrentDate(Record record)

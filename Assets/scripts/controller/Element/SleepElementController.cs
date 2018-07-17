@@ -7,7 +7,6 @@ public class SleepElementController : MonoBehaviour, IPointerClickHandler
 {
     private SleepElement sleepElement;
     private DayElement dayElement;
-    private GameObject prevView;
     private bool interactable;
 
     private Text fromTo;
@@ -26,23 +25,26 @@ public class SleepElementController : MonoBehaviour, IPointerClickHandler
         if(!interactable){
             return;
         }
-        Destroy(prevView);
         ObjectFactory.createSleepView(dayElement, sleepElement);
 
     }
 
-    public void configure(DayElement dayElement, SleepElement sleepElement, GameObject prevView, bool interactable){
+    public void configure(DayElement dayElement, SleepElement sleepElement, bool interactable){
         this.dayElement = dayElement;
         this.sleepElement = sleepElement;
-        this.prevView = prevView;
         this.interactable = interactable;
 
-        this.sleepUnits.text = sleepElement.GetRecords().Count+"";
+        String count = "";
+        if(sleepElement.GetRecords().Count > 1){
+            count = (sleepElement.GetRecords().Count - 1) + "";
+        }
+        this.sleepUnits.text = count;
         this.duration.text = TimeRecordUtility.MiliSecToDuration(sleepElement.GetTotalSleepTime());
 
         Record[] array = sleepElement.GetRecords().ToArray();
-        String startDateTime = TimeRecordUtility.DateTimeToTimeString(array[0].getStartDateTime());
-        this.fromTo.text = startDateTime + " - " + TimeRecordUtility.DateTimeToTimeString(array[array.Length - 1].getEndDateTime());
+        String startDateTime = TimeRecordUtility.DateTimeToTimeString(array[array.Length-1].getStartDateTime());
+        String endDateTime = TimeRecordUtility.DateTimeToTimeString(array[0].getEndDateTime());
+        this.fromTo.text = startDateTime + " - " + endDateTime;
 
     }
 }

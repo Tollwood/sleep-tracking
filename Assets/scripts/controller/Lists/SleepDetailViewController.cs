@@ -18,8 +18,8 @@ public class SleepDetailViewController : AbstracListController<Record>{
     public void configure(DayElement dayElement, SleepElement sleepElement){
         this.dayElement = dayElement;
         this.sleepElement = sleepElement;
-        dayElemetUi.GetComponent<DayElementController>().configure(dayElement, this.gameObject, false);
-        sleepElementUi.GetComponent<SleepElementController>().configure(dayElement, sleepElement, this.gameObject, false);
+        dayElemetUi.GetComponent<DayElementController>().configure(dayElement, ()=> { ObjectFactory.createDayView(dayElement); });
+        sleepElementUi.GetComponent<SleepElementController>().configure(dayElement, sleepElement, false);
         elements = sleepElement.GetRecords(); 
     }
 

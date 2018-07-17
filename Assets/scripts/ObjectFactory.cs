@@ -14,10 +14,10 @@ public class ObjectFactory : MonoBehaviour
         return currentView;
     }
 
-    internal static void createDayElement(DayElement element, GameObject parent, Transform container)
+    internal static void createDayElement(DayElement element, Transform container)
     {
         GameObject go = Instantiate(Resources.Load("DayElement", typeof(GameObject)), container) as GameObject;
-        go.GetComponent<DayElementController>().configure(element, parent, true);
+        go.GetComponent<DayElementController>().configure(element, ()=> { ObjectFactory.createDayView(element); });
     }
 
     internal static GameObject createDetailView(Record record){
@@ -52,10 +52,10 @@ public class ObjectFactory : MonoBehaviour
         return currentView;
     }
 
-    internal static GameObject createSleepElement(DayElement dayElement, SleepElement sleepElement, GameObject prevView, Transform container)
+    internal static GameObject createSleepElement(DayElement dayElement, SleepElement sleepElement, Transform container)
     {
         GameObject go = Instantiate(Resources.Load("SleepElement", typeof(GameObject)), container) as GameObject;
-        go.GetComponent<SleepElementController>().configure(dayElement, sleepElement, prevView, true);
+        go.GetComponent<SleepElementController>().configure(dayElement, sleepElement, true);
         return go;
     }
 

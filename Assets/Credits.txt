@@ -7,3 +7,4 @@ credit arrow = <a href='https://www.freepik.com/free-vector/infographic-arrows-p
 
 webIcon = <a href='https://www.freepik.com/free-vector/useful-web-icons-collection_573292.htm'>Designed by Freepik</a>
 statistics = <a href='https://www.freepik.com/free-vector/statistics-chart-set_762105.htm'>Designed by Freepik</a>
+calender icon = <a href="https://www.flaticon.com/authors/roundicons-freebies" title="Roundicons Freebies">Roundicons Freebies</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>

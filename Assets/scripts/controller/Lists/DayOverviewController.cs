@@ -16,6 +16,6 @@ public class DayOverviewController : AbstracListController<DayElement>
 
     protected override void addElement(DayElement element)
     {
-        ObjectFactory.createDayElement(element,this.gameObject, container);
+        ObjectFactory.createDayElement(element, container);
     }
 }

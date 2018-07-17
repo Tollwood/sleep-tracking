@@ -37,7 +37,7 @@ public class DetailViewController : MonoBehaviour {
     }
 
     public void onBack(){ 
-        Destroy(this.gameObject);
+        ObjectFactory.createDayList();
     }
 
     public void onSave()
