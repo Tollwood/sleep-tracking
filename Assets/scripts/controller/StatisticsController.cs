@@ -1,17 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StatisticsController : MonoBehaviour {
-    private RecordDisplayController longestSleep;
+    private RecordController longestSleep;
 
     private void Awake()
     {
-        longestSleep = transform.Find("longestSleep").GetComponent<RecordDisplayController>();
+        longestSleep = transform.Find("longestSleep").GetComponent<RecordController>();
     }
 
     private void OnEnable()
     {
-        longestSleep.setRecord(RecordManager.getLongestSleepRecord(),(Record record) => {});
+        longestSleep.configure(RecordManager.getLongestSleepRecord(),false);
+    }
+
+    public void onBack(){
+        Destroy(this.gameObject);
     }
 }

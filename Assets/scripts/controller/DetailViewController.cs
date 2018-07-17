@@ -9,7 +9,7 @@ public class DetailViewController : MonoBehaviour {
     private DateTimeSelectorController startDateTimeSelector;
     private DateTimeSelectorController endDateTimeSelector;
 
-    public void setSelectedTimeRecord(Record tr){
+    public void configure(Record tr){
         if(tr == null){
             return;
         }
@@ -24,29 +24,32 @@ public class DetailViewController : MonoBehaviour {
 
         transform.Find("DeleteButton").GetComponent<Button>().gameObject.SetActive(!record.isNewRecord());
         transform.Find("HintInput").GetComponent<InputField>().text = record.hint;
-        transform.Find("StartDateTimeSelector").GetComponent<DateTimeSelectorController>().SetDateTime(record.getStartDateTime());
-        transform.Find("EndDateTimeSelector").GetComponent<DateTimeSelectorController>().SetDateTime(record.getEndDateTime());}
+        transform.Find("StartDateTimeSelector").GetComponent<DateTimeSelectorController>().dateTime = record.getStartDateTime();
+        transform.Find("EndDateTimeSelector").GetComponent<DateTimeSelectorController>().dateTime= record.getEndDateTime();
+    }
 
     public Record GetTimeRecord(){return record;}
 
     public void onDelete()
     {
         RecordsManager.delete(record);
-        record = null;
+        ObjectFactory.createDayList();
     }
 
-    public void onBack(){ record = null;}
+    public void onBack(){ 
+        Destroy(this.gameObject);
+    }
 
     public void onSave()
     {
         record.hint = hintInput.text;
-        record.SetStartDate(startDateTimeSelector.GetDateTime());
-        record.SetEndDate(endDateTimeSelector.GetDateTime());
+        record.SetStartDate(startDateTimeSelector.dateTime);
+        record.SetEndDate(endDateTimeSelector.dateTime);
         if(record.id == 0){
             RecordsManager.save(record);
         }
         RecordManager.update(record);
-        record = null;
+        ObjectFactory.createDayList();
     }
 
     private void Awake()

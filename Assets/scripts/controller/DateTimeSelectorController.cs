@@ -19,7 +19,7 @@ public class DateTimeSelectorController : MonoBehaviour
     private Button minutesUpButton;
     private InputField minutesInput;
     private Button minutesDownButton;
-    private DateTime dateTime;
+    public DateTime dateTime {get; set;}
     private DateTime renderedDatTime;
 
     protected void Awake()
@@ -43,16 +43,16 @@ public class DateTimeSelectorController : MonoBehaviour
 
     private void Start()
     {
-        dayUpButton.onClick.AddListener(onDayUp);
-        dayDownButton.onClick.AddListener(onDayDown);
-        monthUpButton.onClick.AddListener(onMonthUp);
-        monthDownButton.onClick.AddListener(onMonthDown);
-        yearUpButton.onClick.AddListener(onYearUp);
-        yearDownButton.onClick.AddListener(onYearDown);
-        hourUpButton.onClick.AddListener(onHoursUp);
-        hourDownButton.onClick.AddListener(onHoursDown);
-        minutesUpButton.onClick.AddListener(onMinutesUp);
-        minutesDownButton.onClick.AddListener(onMinutesDown);
+        dayUpButton.onClick.AddListener(()=>{dateTime = dateTime.AddDays(1);});
+        dayDownButton.onClick.AddListener(() => { dateTime = dateTime.AddDays(-1);});
+        monthUpButton.onClick.AddListener(() => { dateTime = dateTime.AddMonths(1);});
+        monthDownButton.onClick.AddListener(() => { dateTime = dateTime.AddMonths(-1); });
+        yearUpButton.onClick.AddListener(() => { dateTime = dateTime.AddYears(1); });
+        yearDownButton.onClick.AddListener(() => { dateTime = dateTime.AddYears(-1); });
+        hourUpButton.onClick.AddListener(() => { dateTime = dateTime.AddHours(1); });
+        hourDownButton.onClick.AddListener(() => { dateTime = dateTime.AddHours(-1); });
+        minutesUpButton.onClick.AddListener(() => { dateTime = dateTime.AddMinutes(1); });
+        minutesDownButton.onClick.AddListener(() => { dateTime = dateTime.AddMinutes(-1); });
     }
 
     private void Update()
@@ -62,69 +62,7 @@ public class DateTimeSelectorController : MonoBehaviour
             renderedDatTime = dateTime;
         }
     }
-    private void OnEnable(){
-        renderDateTime();
-    }
-    public void onMinutesUp()
-    {
-        dateTime = dateTime.AddMinutes(1);
-        renderDateTime();
-    }
-
-    public void onMinutesDown()
-    {
-        dateTime = dateTime.AddMinutes(-1);
-        renderDateTime();
-    }
-
-    public void onHoursUp()
-    {
-        dateTime = dateTime.AddHours(1);
-        renderDateTime();
-    }
-
-    public void onHoursDown()
-    {
-        dateTime = dateTime.AddHours(-1);
-        renderDateTime();
-    }
-
-    public void onDayUp()
-    {
-        dateTime = dateTime.AddDays(1);
-        renderDateTime();
-    }
-
-    public void onDayDown()
-    {
-        dateTime = dateTime.AddDays(-1);
-        renderDateTime();
-    }
-
-    public void onMonthUp()
-    {
-        dateTime = dateTime.AddMonths(1);
-        renderDateTime();
-    }
-
-    public void onMonthDown()
-    {
-        dateTime = dateTime.AddMonths(-1);
-        renderDateTime();
-    }
-
-    public void onYearUp()
-    {
-        dateTime = dateTime.AddYears(1);
-        renderDateTime();
-    }
-
-    public void onYearDown()
-    {
-        dateTime = dateTime.AddYears(-1);
-        renderDateTime();
-    }
-
+   
     private void renderDateTime(){
         transform.Find("DayInput").GetComponent<InputField>().text = dateTime.Day.ToString();
         transform.Find("MonthInput").GetComponent<InputField>().text = dateTime.Month.ToString();
@@ -133,12 +71,4 @@ public class DateTimeSelectorController : MonoBehaviour
         transform.Find("MinutesInput").GetComponent<InputField>().text = dateTime.Minute.ToString();
     }
 
-    public void SetDateTime(DateTime newDateTime){
-        dateTime = newDateTime;
-        renderDateTime();
-    }
-
-    public DateTime GetDateTime(){
-        return dateTime;
-    }
 }

@@ -1,11 +1,7 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class TrackingViewController : MonoBehaviour {
     
-    private Transform list;
-    private Transform statistics;
     private Transform awakeGroup;
     private Transform sleepGroup;
 
@@ -13,10 +9,13 @@ public class TrackingViewController : MonoBehaviour {
     {
         awakeGroup = transform.Find("AwakeGroup");
         sleepGroup = transform.Find("SleepGroup");
-        statistics = transform.Find("StatisticsView");
-        list = transform.Find("List");
     }
 
+    private void Start()
+    {
+        ObjectFactory.createDayList();
+
+    }
     public void Update()
     {
         updateActiveState();
@@ -43,11 +42,14 @@ public class TrackingViewController : MonoBehaviour {
 
     public void onShowStatistics()
     {
-        bool visibility = list.gameObject.gameObject.activeSelf;
-        awakeGroup.gameObject.SetActive(!visibility);
-        list.gameObject.SetActive(!visibility);
-        statistics.gameObject.SetActive(visibility);
+        ObjectFactory.createStatisticsView();
     }
+
+    public void onShowDayOverview()
+    {
+        ObjectFactory.createDayList();
+    }
+
     public void onResetHistoryClicked()
     {
         RecordsManager.resetHistory();
@@ -55,11 +57,6 @@ public class TrackingViewController : MonoBehaviour {
  
     public void onNew()
     {
-        editRecord(Record.NewTimeRecord());
+        ObjectFactory.createDetailView(Record.NewTimeRecord());
     }
-
-    public void editRecord(Record record){
-        transform.GetComponentInParent<CanvasController>().editRecord(record);
-    }
-   
 }

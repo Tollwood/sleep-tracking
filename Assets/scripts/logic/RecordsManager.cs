@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 public static class RecordsManager {
 
@@ -28,6 +30,22 @@ public static class RecordsManager {
         PlayerPrefs.SetString("history", JsonUtility.ToJson(history));
     }
 
+    internal static List<DayElement> GetDayElements()
+    {
+        List<DayElement> dayElements = new List<DayElement>();
+        DayElement dayElement = new DayElement();
+        foreach(Record record in RecordsManager.GetReverseHistorySortedByDay().records){
+            bool isSameDay = dayElement.isSameDay(record);
+            if(dayElement.GetSleepElements().Count == 0 || isSameDay){
+                dayElement.addRecord(record);
+                continue;
+            }
+            dayElements.Add(dayElement);
+            dayElement = new DayElement();
+            dayElement.addRecord(record);
+        }
+        return dayElements;
+    }
 
     public static void save(Record record)
     {

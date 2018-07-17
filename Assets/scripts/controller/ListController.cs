@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ListController : MonoBehaviour
 {
 
-    public GameObject dayMarkerPrefab;
+  /*  public GameObject dayMarkerPrefab;
     public GameObject elementPrefab;
 
 
@@ -46,10 +47,10 @@ public class ListController : MonoBehaviour
 
     private void clearList()
     {
-        foreach (Transform child in recordContainer)
-        {
-            Destroy(child.gameObject);
-        }
+  //      foreach (Transform child in recordContainer)
+        //      {
+        //  Destroy(child.gameObject);
+        //}
     }
 
     public void addDayMarkerIfDayChanged(Record timeRecord)
@@ -91,7 +92,8 @@ public class ListController : MonoBehaviour
         {
             go.GetComponent<Image>().color = Color.white;
         }
-        go.GetComponent<RecordDisplayController>().setRecord(timeRecord, editRecord);
+        go.GetComponent<RecordController>().setRecord(timeRecord, editRecord);
         return go;
     }
+*/
 }
