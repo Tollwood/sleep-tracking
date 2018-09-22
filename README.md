@@ -7,10 +7,7 @@ Each sleep record (start / stop) is grouped into a sleep phase as long as there 
 Each sleep record belongs to one sleep phase
 Each sleep phase belongs to a day (from 6pm to 6 pm the next day)
 
-[TOC]
-
-
-##Features
+## Features
 - start and stop Sleep Phase
 - add manual sleep record
 - edit sleep record
