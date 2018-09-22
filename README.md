@@ -16,10 +16,11 @@ Each sleep phase belongs to a day (from 6pm to 6 pm the next day)
 - group sleep records by day and sleep phase
 
 ## Impressions
-<img src="https://github.com/Tollwood/sleep-tracking/impressions/Day_Summary_View.PNG" width="50%" height="50%" title="Day Summary View">
-![not found](impressions/Recording.jpeg "Recording")
-![not found](impressions/Day_Detail_View.PNG "Day Detail View")
-![not found](impressions/Sleepphase_Detail_View.PNG "Sleep Phase Detail View")
-![not found](impressions/Edit_View.PNG "Edit View")
-![not found](impressions/New_Entry_View.PNG "Manual Entry View")
-![not found](impressions/Statistics_View.png "some statistics")
+
+<img src="impressions/Day_Summary_View.PNG" width="200">
+<img src="impressions/Recording.jpeg" width="200">
+<img src="impressions/Day_Detail_View.PNG" width="200">
+<img src="impressions/Sleepphase_Detail_View.PNG" width="200">
+<img src="impressions/Edit_View.PNG" width="200">
+<img src="impressions/Edit_View.PNG" width="200">
+<img src="impressions/Statistics_View.png" width="200">
