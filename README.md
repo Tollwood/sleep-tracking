@@ -16,4 +16,10 @@ Each sleep phase belongs to a day (from 6pm to 6 pm the next day)
 - group sleep records by day and sleep phase
 
 ## Impressions
-
+![not found](impressions/Day_Summary_View.PNG "Day Summary View")
+![not found](impressions/Recording.jpeg "Recording")
+![not found](impressions/Day_Detail_View.PNG "Day Detail View")
+![not found](impressions/Sleepphase_Detail_View.PNG "Sleep Phase Detail View")
+![not found](impressions/Edit_View.PNG "Edit View")
+![not found](impressions/New_Entry_View.PNG "Manual Entry View")
+![not found](impressions/Statistics_View.png "some statistics")
